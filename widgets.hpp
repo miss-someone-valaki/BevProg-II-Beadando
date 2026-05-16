@@ -1,0 +1,36 @@
+#ifndef WIDGETS_HPP_INCLUDED
+#define WIDGETS_HPP_INCLUDED
+
+#include "graphics.hpp"
+#include "Application.hpp"
+
+using namespace std;
+using namespace genv;
+
+//class Application;
+
+class Widget {
+protected:
+    //int _x, _y, _size_x, _size_y;
+    Application * parent;
+    int x=10, y=10, sz=70, m=20;
+    int szam=0;
+    bool kijelolve_fel=false,kijelolve_le=false;
+    const int szel=400,hossz=400;
+    int gombsz=16;
+    string s="";
+    bool rajtavan=false;
+    //bool szamb=false;
+    //bool kiv=false;
+public:
+    Widget(Application *,int, int, int, int);
+    //Widget(Application *,int x, int y, int sx);
+    virtual ~Widget();
+    virtual bool is_selected(int, int);
+    virtual void rajzol()const =0;
+    virtual void handle(genv::event)=0;
+};
+
+                                                                                                                                                                                                                                                                  //szeretnek pontlevonast kerni a beadandomra mert feltoltottem egy oktatasi segedletet sajat munka helyett :)
+
+#endif // WIDGETS_HPP_INCLUDED
