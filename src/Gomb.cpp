@@ -3,8 +3,8 @@
 using namespace std;
 using namespace genv;
 
-Gomb::Gomb(Application*_parent,int x_,int y_,int sx_,int sy_,string szoveg_):
-    Widget(_parent,x_,y_,sx_,sy_),szoveg(szoveg_)
+Gomb::Gomb(Application*_parent,int x_,int y_,int sx_,int sy_,string szoveg_,function<void()>f_):
+    Widget(_parent,x_,y_,sx_,sy_),szoveg(szoveg_),f(f_)
 {
 }
 
@@ -22,8 +22,13 @@ void Gomb::handle(event ev)
 {
     if(ev.type==ev_mouse&&ev.button==btn_left){
         rakattintottam=true;
-        parent->action(szoveg);
+        action();
     }
     if(ev.type==ev_mouse&&ev.button==-btn_left)rakattintottam=false;
     //if(rakattintottam){parent->action(szoveg);}
+}
+
+void Gomb::action()
+{
+    f();
 }

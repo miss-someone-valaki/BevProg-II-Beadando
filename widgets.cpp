@@ -11,9 +11,9 @@ Widget::Widget(Application *_parent,int _x, int _y, int _sx, int _sy) : x(_x), y
 
 Widget::~Widget(){}
 
-/*Widget::Widget(Application *parent,int x, int y, int sx) : _x(x), _y(y), _size_x(sx),_parent(parent)
+/*Widget::Widget(int x_, int y_, int sz_,int m_) : x(x_),y(y_),sz(sz_),m(m_)
 {
-    _parent->register_widget(this);
+    //_parent->register_widget(this);
 }*/
 
 bool Widget::is_selected(int mouse_x, int mouse_y)
@@ -84,7 +84,15 @@ string Widget::getszoveg()
     //gout<<move_to(10,10)<<color(255,255,255)<<box(10,10);
 }*/
 
+void Widget::set_lathato(bool v)
+{
+    lathato=v;
+}
 
+bool Widget::get_lathato()const
+{
+    return lathato;
+}
 
 
 

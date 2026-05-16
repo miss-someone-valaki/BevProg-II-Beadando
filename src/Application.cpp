@@ -17,7 +17,8 @@ Application::~Application()
 void Application::event_loop()
 {
     for(Widget*w:widget){
-        w->rajzol();
+        if(w->get_lathato())
+            w->rajzol();
     }
     gout<<refresh;
     event ev;
@@ -25,25 +26,25 @@ void Application::event_loop()
     while(gin >> ev && ev.keycode!=key_escape) {
         if (ev.type == ev_mouse && ev.button==btn_left) {
             for (size_t i=0;i<widget.size();i++) {
-                if (widget[i]->is_selected(ev.pos_x, ev.pos_y)) {
+                if (widget[i]->get_lathato() && widget[i]->is_selected(ev.pos_x, ev.pos_y)) {
                         focus = i;
                 }
             }
         }
-        if(ev.type==ev_key){
+        /*if(ev.type==ev_key){
             if(ev.keycode==key_enter){
                 action("enter");
             }
             else if(ev.keycode==key_space){
                 action("space");
             }
-        }
+        }*/
         if (focus!=-1) {
             widget[focus]->handle(ev);
         }
         gout<<move_to(0,0)<<color(0,0,0)<<box(szel,hossz);
         for (Widget * w : widget) {
-            w->rajzol();
+            if(w->get_lathato())w->rajzol();
         }
         gout << refresh;
     }

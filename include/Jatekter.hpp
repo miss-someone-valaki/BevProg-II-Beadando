@@ -2,18 +2,25 @@
 #define JATEKTER_HPP
 
 #include <../widgets.hpp>
+#include "Jatekmester.hpp"
+//#include "Alakzat.hpp"
+#include <functional>
 
+class Jatekmester;
 
 class Jatekter : public Widget
 {
 public:
-    Jatekter(Application*,int,int,int,int);
+    Jatekter(Application*,int,int,int,int,int,function<void(int,int)>,Jatekmester*);
     virtual ~Jatekter();
     void rajzol()const override;
     void handle(event ev)override;
 protected:
+    //int szdb,mdb,kockaszm=30;
+    //vector<vector<Alakzat*>>tabla;
+    function<void(int,int)>f;
     int szdb,mdb,kockaszm=30;
-
+    Jatekmester *jm;
 };
 
 #endif // JATEKTER_HPP

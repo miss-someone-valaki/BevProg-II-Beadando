@@ -19,7 +19,7 @@ public:
     virtual ~Application();
     void event_loop();
     void register_widget(Widget *);
-    virtual void action(string)=0;
+    //virtual void action(string)=0;
     //void torles_listabol(string);
 };
 

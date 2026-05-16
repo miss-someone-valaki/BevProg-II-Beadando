@@ -87,10 +87,15 @@ void szambeallito::handle(event ev)
         kijelolve_fel=false;
         kijelolve_le=false;
     }
-    if(ev.type==ev_key && is_selected(ev.pos_x,ev.pos_y)){
+    if(ev.type==ev_key){ //&& is_selected(ev.pos_x,ev.pos_y)){
         if(ev.keycode==key_up){if(szam<maxi)szam++;}
         if(ev.keycode==key_down){if(szam>mini)szam--;}
         if(ev.keycode==key_pgdn){if(szam-10>=mini)szam=szam-10;}
         if(ev.keycode==key_pgup){if(szam+10<=maxi)szam=szam+10;}
     }
+}
+
+int szambeallito::get_szam()
+{
+    return szam;
 }

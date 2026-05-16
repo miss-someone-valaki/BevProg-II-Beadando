@@ -22,15 +22,18 @@ protected:
     bool rajtavan=false;
     //bool szamb=false;
     //bool kiv=false;
+    bool lathato=false;
 public:
     Widget(Application *,int, int, int, int);
-    //Widget(Application *,int x, int y, int sx);
+    //Widget(int,int,int,int);
     virtual ~Widget();
     virtual bool is_selected(int, int);
     virtual void rajzol()const =0;
     virtual void handle(genv::event)=0;
+    void set_lathato(bool v);
+    bool get_lathato()const;
 };
 
-                                                                                                                                                                                                                                                                  //szeretnek pontlevonast kerni a beadandomra mert feltoltottem egy oktatasi segedletet sajat munka helyett :)
+                                                                                                                                                                                                                                                                  //nem szeretnek pontlevonast kerni a beadandomra, ezt sajat magam írtam meg
 
 #endif // WIDGETS_HPP_INCLUDED

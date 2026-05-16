@@ -14,6 +14,10 @@
 using namespace std;
 //using namespace genv;
 
+enum allapot{
+    START,GAME,OVER
+};
+
 class MyApp:public Application
 {
 protected:
@@ -22,24 +26,33 @@ protected:
     Gomb *go1,*go2;
     //StaticText *te1;
     TextEdit *te2;
-    ExampleCheckBox *cb;
-    szambeallito *sz1;*/
+    ExampleCheckBox *cb;*/
+    szambeallito *sz1;
+    Jatekmester *jm;
     Jatekter *jt;
+    int n=0;
+    allapot all;
+    Gomb *start;
+    Gomb *uj_jatek;
 public:
-    MyApp(int szel_,int hossz_):Application(szel_,hossz_)
+    MyApp(int szel_,int hossz_):Application(szel_,hossz_),all(START),jm(nullptr),jt(nullptr)
     {
+        //all=START;
         /*ki1=new kivalaszto(this,10,10,70,20,{"egy","ketto","harom","negy","ot","hat","het"});
         ki2=new kivalaszto(this,100,10,70,20,{"a","be","ce","de","e","ef","ge"});
         go1=new Gomb(this,10,100,70,20,"elso");
         go2=new Gomb(this,100,100,70,20,"masodik");
         //te1=new StaticText(this,10,200,200,50,"valamit, kérlek");
         te2=new TextEdit(this,10,200,200,50,"valamit, kérlek");
-        cb=new ExampleCheckBox(this,200,100,40,40);
-        sz1=new szambeallito(this,10,50,70,20,150,-25);*/
-        jt=new Jatekter(this,10,10,15,15);
+        cb=new ExampleCheckBox(this,200,100,40,40);*/
+        sz1=new szambeallito(this,10,10,70,20,30,15);
+        start=new Gomb(this,10,100,70,20,"START",[=](){elindul();});
+        uj_jatek=new Gomb(this,10,200,70,20,"RESTART",[=](){elindul();});
+
+        lathatosag();
     }
-    void action(string id)
-    {/*
+    /*void action(string id)
+    {
         string kiiratando="",fajlnev="";
         if(id=="enter"){
             kiiratando=te2->value();
@@ -56,9 +69,35 @@ public:
         ofstream fajlba(fajlnev);
         fajlba<<kiiratando;
     */
-    if(id=="elsõ"){
+    /*if(id=="enter"){
         //ki1->torles_listabol();
+        n=sz1->get_szam();
     }
+    }*/
+    void update(){
+        //if(jm->urese(x,y))jm->odarak();
+
+    }
+    void lathatosag() {
+        //if(sz1)
+            sz1->set_lathato(all==START);
+        //if(start)
+        start->set_lathato(all==START);
+        if(jt)
+        jt->set_lathato(all==GAME);
+
+        //vege_szoveg->set_lathato(all==OVER);
+        if(uj_jatek)
+            uj_jatek->set_lathato(all==OVER);
+    }
+    void elindul()
+    {
+        n=sz1->get_szam();
+        //lathatosag();
+        jm=new Jatekmester(n,n);
+        jt=new Jatekter(this,10,40,300,300,n,[=](int x,int y){update();},jm);
+        all=GAME;
+        lathatosag();
     }
 };
 
