@@ -17,6 +17,7 @@ public:
     bool urese(int,int);
     void odarak(int,int);
     int get_table(int,int);
+    bool ellenorzes(int,int);
 protected:
     vector<vector<int>>table;
     int melyik_jatekos=1;

@@ -63,10 +63,10 @@ int Jatekter::melyik_negyzet_folott_y(int my)
 
 void Jatekter::handle(event ev)
 {
-    if(ev.type==ev_mouse && ev.button==btn_left){
+    if(ev.type==ev_mouse && ev.button==btn_left && is_selected(ev.pos_x,ev.pos_y)){
         int mx=melyik_negyzet_folott_x(ev.pos_x);
         int my=melyik_negyzet_folott_y(ev.pos_y);
-        if(mx>=0 && my>=0 && mx<szdb && my<=mdb)
+        if(mx>=0 && my>=0 && mx<szdb && my<mdb)
             f(mx,my);
         //Jatekmester::handle(ev.pos_x,ev.pos_y);
     }

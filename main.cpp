@@ -76,7 +76,10 @@ public:
     }*/
     void update(int x,int y){
         if(jm->urese(x,y))jm->odarak(x,y);
-
+        if(jm->ellenorzes(x,y)){
+            all=OVER;
+            lathatosag();
+        }
     }
     void lathatosag() {
         //if(sz1)

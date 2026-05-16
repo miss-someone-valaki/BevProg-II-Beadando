@@ -24,13 +24,46 @@ void Jatekmester::odarak(int mx,int my)
 {
     if(melyik_jatekos==1){
         table[mx][my]=1;
+        ellenorzes(mx,my);
         melyik_jatekos=2;
     }
     else if(melyik_jatekos==2){
         table[mx][my]=2;
+        ellenorzes(mx,my);
         melyik_jatekos=1;
     }
+    //ellenorzes(mx,my);
+}
 
+/*void Jatekmester::ellenorzes(int akt_alak_x,int akt_alak_y)
+{
+
+}*/
+
+bool Jatekmester::ellenorzes(int x,int y){
+    int jatekos=table[x][y];
+    int dx[]={1,0,1,1};
+    int dy[]={0,1,1,-1};
+
+    for(int i=0;i<4;i++){
+        int db=1;
+        int nx=x+dx[i];
+        int ny=y+dy[i];
+        while(nx>=0 && nx<table.size() && ny>=0 && ny<table[0].size() && table[nx][ny]==jatekos){
+            db++;
+            nx+=dx[i];
+            ny+=dy[i];
+        }
+        nx=x-dx[i];
+        ny=y-dy[i];
+        while(nx>=0 && nx<table.size() && ny>=0 && ny<table[0].size() && table[nx][ny]==jatekos){
+            db++;
+            nx-=dx[i];
+            ny-=dy[i];
+        }
+        if(db>=5)return true;
+    }
+    return false;
 }
 
 int Jatekmester::get_table(int i,int j)
