@@ -14,7 +14,7 @@ public:
     virtual ~Gomb();
     void rajzol()const override;
     void handle(event ev)override;
-    virtual void action();
+    //virtual void action();
 private:
     string szoveg;
     bool rakattintottam=false;

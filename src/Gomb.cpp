@@ -22,13 +22,13 @@ void Gomb::handle(event ev)
 {
     if(ev.type==ev_mouse&&ev.button==btn_left){
         rakattintottam=true;
-        action();
+        f();
     }
     if(ev.type==ev_mouse&&ev.button==-btn_left)rakattintottam=false;
     //if(rakattintottam){parent->action(szoveg);}
 }
 
-void Gomb::action()
+/*void Gomb::action()
 {
     f();
-}
+}*/

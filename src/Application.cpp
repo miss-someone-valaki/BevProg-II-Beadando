@@ -39,6 +39,7 @@ void Application::event_loop()
                 action("space");
             }
         }*/
+        if(focus!=-1 && !widget[focus]->get_lathato())focus=-1;
         if (focus!=-1) {
             widget[focus]->handle(ev);
         }

@@ -74,8 +74,8 @@ public:
         n=sz1->get_szam();
     }
     }*/
-    void update(){
-        //if(jm->urese(x,y))jm->odarak();
+    void update(int x,int y){
+        if(jm->urese(x,y))jm->odarak(x,y);
 
     }
     void lathatosag() {
@@ -95,7 +95,7 @@ public:
         n=sz1->get_szam();
         //lathatosag();
         jm=new Jatekmester(n,n);
-        jt=new Jatekter(this,10,40,300,300,n,[=](int x,int y){update();},jm);
+        jt=new Jatekter(this,40,40,400,400,n,[=](int x,int y){update(x,y);},jm);
         all=GAME;
         lathatosag();
     }

@@ -15,10 +15,11 @@ public:
     Jatekmester(int,int);
     virtual ~Jatekmester();
     bool urese(int,int);
-    void odarak();
+    void odarak(int,int);
     int get_table(int,int);
 protected:
-    vector<vector<int>>tabla;
+    vector<vector<int>>table;
+    int melyik_jatekos=1;
 };
 
 #endif // JATEKMESTER_HPP
