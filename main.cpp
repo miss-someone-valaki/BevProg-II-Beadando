@@ -42,8 +42,8 @@ public:
         ki2=new kivalaszto(this,100,10,70,20,{"a","be","ce","de","e","ef","ge"});
         go1=new Gomb(this,10,100,70,20,"elso");
         go2=new Gomb(this,100,100,70,20,"masodik");
-        //te1=new StaticText(this,10,200,200,50,"valamit, kérlek");
-        te2=new TextEdit(this,10,200,200,50,"valamit, kérlek");
+        //te1=new StaticText(this,10,200,200,50,"valamit, k rlek");
+        te2=new TextEdit(this,10,200,200,50,"valamit, k rlek");
         cb=new ExampleCheckBox(this,200,100,40,40);*/
         sz1=new szambeallito(this,10,10,70,20,30,15);
         start=new Gomb(this,10,100,70,20,"START",[=](){elindul();});
