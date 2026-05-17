@@ -6,9 +6,10 @@
 
 using namespace genv; using namespace std;
 
-StaticText::StaticText(Application *_parent,int _x,int _y,int sx,int sy,std::string t):Widget(_parent,_x,_y,sx,sy),_text(t)
+StaticText::StaticText(Application *_parent,int _x,int _y,int sx,int sy,std::string t,int betum):
+    Widget(_parent,_x,_y,sx,sy),_text(t),betumeret(betum)
 {
-    ifstream f(_text);
+    /*ifstream f(_text);
     if(!f.is_open()){
         cerr<<"Hiba!";
     }
@@ -19,12 +20,13 @@ StaticText::StaticText(Application *_parent,int _x,int _y,int sx,int sy,std::str
         while(ss>>szo){
             szavak.push_back(szo);
         }
-    }
+    }*/
+    //gout.load_font("LiberationSans-Regular.ttf",28);
 }
 
 void StaticText::rajzol() const
 {
-    utolso_elem_is_kiirva=false;
+    /*utolso_elem_is_kiirva=false;
     int sorszam=elcsuszas,eppenhol=x+5,hanyadik_szo=0;
     gout<<move_to(0,0)<<color(0,0,0)<<box(szel,hossz);
     gout<<move_to(x,y)<<color(255,255,255)<<box(sz,m)<<move_to(x+5,y+15)<<color(255,0,0);
@@ -44,18 +46,21 @@ void StaticText::rajzol() const
             }
         }
     }
-    gout<<color(0,255,0)<<move_to(x+sz-3,y+m-3)<<box(6,6);
+    gout<<color(0,255,0)<<move_to(x+sz-3,y+m-3)<<box(6,6);*/
+    gout.load_font("LiberationSans-Regular.ttf", betumeret);
+    gout<<move_to(x,y)<<color(0,0,0)<<box(sz,m);
+    gout<<move_to(x+(sz-gout.twidth(_text))/2,y+(m-gout.cascent()+gout.cdescent())/2)<<color(255,255,255)<<text(_text);
 }
 
-bool StaticText::huzgalo_folott(event ev)
+/*bool StaticText::huzgalo_folott(event ev)
 {
     if(ev.pos_x>=x+sz-3 && ev.pos_x<=x+sz+3 && ev.pos_y>=y+m-3 && ev.pos_y<=y+m+3)return true;
     else return false;
-}
+}*/
 
 void StaticText::handle(event ev)
 {
-    if(ev.type==ev_mouse){
+    /*if(ev.type==ev_mouse){
         if(ev.button==btn_wheeldown && !utolso_elem_is_kiirva){
             elcsuszas--;
         }
@@ -72,5 +77,10 @@ void StaticText::handle(event ev)
             if(ev.pos_x-x>min_x_meret)sz=ev.pos_x-x;
             if(ev.pos_y-y>min_y_meret)m=ev.pos_y-y;
         }
-    }
+    }*/
+}
+
+void StaticText::set_text(string uj)
+{
+    _text="Next player: "+uj;
 }

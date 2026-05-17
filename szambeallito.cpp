@@ -13,21 +13,23 @@ using namespace std;
     sz=50;
 }*/
 
-szambeallito::szambeallito(Application *parent_,int x_,int y_,int sz_,int m_,int maxi_,int mini_):
+szambeallito::szambeallito(Application *parent_,int x_,int y_,int sz_,int m_,int maxi_,int mini_,int betum):
     Widget(parent_,x_,y_,sz_,m_),
-    maxi(maxi_),mini(mini_)
+    maxi(maxi_),mini(mini_),betumeret(betum)
 {
     if(mini_>0)szam = mini_;
     if(maxi_<0)szam=maxi_;
     sz=50;
+    //gout.load_font("LiberationSans-Regular.ttf", 12);
 }
 
 void szambeallito::rajzol()const
 {
+    gout.load_font("LiberationSans-Regular.ttf", betumeret);
     //szamb=true;
     string s=to_string(szam);
     gout<<move_to(x,y)<<color(255,255,255)<<box(sz,m);
-    gout<<move_to(x+5,y+m/2+gout.cascent()/2)<<color(0,0,0)<<text(s);
+    gout<<move_to(x+5,y+(m-gout.cascent())/2)<<color(0,0,0)<<text(s);
     if(kijelolve_le){
         gout<<move_to(x+sz-gombsz,y)<<color(200,200,200)<<box_to(x+sz-1,y+m/2)
         <<move_to(x+sz-gombsz,y+m/2)<<color(150,150,150)<<box_to(x+sz-1,y+m-1)

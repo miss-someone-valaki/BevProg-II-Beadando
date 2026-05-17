@@ -18,11 +18,15 @@ public:
     void odarak(int,int);
     int get_table(int,int);
     bool ellenorzes(int,int);
+    bool gyoztese(int,int);
+    int melyik_jatekos_van();
 protected:
     vector<vector<int>>table;
     int melyik_jatekos=1;
     int tabla_tele;
     bool megtelt=false;
+    vector<pair<int,int>>gyoztes;
+    bool valaki_nyert=false;
 };
 
 #endif // JATEKMESTER_HPP

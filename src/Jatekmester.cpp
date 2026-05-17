@@ -50,10 +50,13 @@ bool Jatekmester::ellenorzes(int x,int y){
     int dy[]={0,1,1,-1};
 
     for(int i=0;i<4;i++){
+        gyoztes.clear(); // Minden iránynál tiszta lappal indulunk
+        gyoztes.push_back({x,y});
         int db=1;
         int nx=x+dx[i];
         int ny=y+dy[i];
         while(nx>=0 && nx<table.size() && ny>=0 && ny<table[0].size() && table[nx][ny]==jatekos){
+            gyoztes.push_back({nx, ny});
             db++;
             nx+=dx[i];
             ny+=dy[i];
@@ -61,11 +64,12 @@ bool Jatekmester::ellenorzes(int x,int y){
         nx=x-dx[i];
         ny=y-dy[i];
         while(nx>=0 && nx<table.size() && ny>=0 && ny<table[0].size() && table[nx][ny]==jatekos){
+            gyoztes.push_back({nx, ny});
             db++;
             nx-=dx[i];
             ny-=dy[i];
         }
-        if(db>=5)return true;
+        if(db>=5){valaki_nyert=true;return true;}
     }
     return false;
 }
@@ -73,4 +77,20 @@ bool Jatekmester::ellenorzes(int x,int y){
 int Jatekmester::get_table(int i,int j)
 {
     return table[i][j];
+}
+bool Jatekmester::gyoztese(int i, int j)
+{
+    if(valaki_nyert){
+        for(const auto& p:gyoztes){
+            if(p.first==i && p.second==j){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+int Jatekmester::melyik_jatekos_van()
+{
+    return melyik_jatekos;
 }

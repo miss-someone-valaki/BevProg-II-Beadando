@@ -17,29 +17,48 @@ void Jatekter::rajzol()const
     gout<<move_to(x,y)<<color(150,150,150)<<box(szdb*kockaszm,mdb*kockaszm);
     for(int i=0;i<szdb;i++){
         for(int j=0;j<mdb;j++){
-            if(jm->get_table(i,j)==0){
-                gout<<move_to(x+i*kockaszm+1,y+j*kockaszm+1)<<color(200,200,200)<<box(kockaszm-2,kockaszm-2);
-            }
-            else if(jm->get_table(i,j)==1){
-                gout<<move_to(x+i*kockaszm+1,y+j*kockaszm+1)<<color(200,200,200)<<box(kockaszm-2,kockaszm-2);
-                gout<<move_to(x+i*kockaszm+3,y+j*kockaszm+3)<<color(0,0,255)<<line(kockaszm-6,kockaszm-6);
-                gout<<move_to(x+i*kockaszm+kockaszm-3,y+j*kockaszm+3)<<color(0,0,255)<<line(-kockaszm+6,kockaszm-6);
+            gout<<move_to(x+i*kockaszm+1,y+j*kockaszm+1)<<color(220,220,220)<<box(kockaszm-2,kockaszm-2);
+            /*if(jm->get_table(i,j)==0){
+
+            }*/
+            if(jm->get_table(i,j)==1){
+                if(jm->gyoztese(i,j))
+                    gout<<move_to(x+i*kockaszm+1,y+j*kockaszm+1)<<color(180, 180, 255)<<box(kockaszm-2,kockaszm-2);
+                //gout<<move_to(x+i*kockaszm+1,y+j*kockaszm+1)<<color(220,220,220)<<box(kockaszm-2,kockaszm-2);
+                //else{
+                    gout<<move_to(x+i*kockaszm+3,y+j*kockaszm+3)<<color(0,0,255)<<line(kockaszm-6,kockaszm-6);
+                    gout<<move_to(x+i*kockaszm+kockaszm-3,y+j*kockaszm+3)<<color(0,0,255)<<line(-kockaszm+6,kockaszm-6);
+                //}
             }
             else if(jm->get_table(i,j)==2){
-                gout<<move_to(x+i*kockaszm+1,y+j*kockaszm+1)<<color(200,200,200)<<box(kockaszm-2,kockaszm-2);
+                //gout<<move_to(x+i*kockaszm+1,y+j*kockaszm+1)<<color(220,220,220)<<box(kockaszm-2,kockaszm-2);
                 int r=(kockaszm-6)/2;
                 //r=kockaszm;
-                for(int k=-r;k<r;k++){
-                    for(int l=-r;l<r;l++){
-                        if(k*k+l*l<=(r-1)*(r-1)){
-                            gout<<color(200,200,200)<<move_to(x+i*kockaszm+kockaszm/2+k,y+j*kockaszm+kockaszm/2+l)<<dot;
-                        }
-                        else if(k*k+l*l<=r*r){
-                            gout<<color(255,0,0)<<move_to(x+i*kockaszm+kockaszm/2+k,y+j*kockaszm+kockaszm/2+l)<<dot;
+                if(jm->gyoztese(i,j)){
+                    gout<<move_to(x+i*kockaszm+1,y+j*kockaszm+1)<<color(255,180,180)<<box(kockaszm-2,kockaszm-2);
+                    for(int k=-r;k<r;k++){
+                        for(int l=-r;l<r;l++){
+                            if(k*k+l*l<=(r-1)*(r-1)){
+                                gout<<color(255,180,180)<<move_to(x+i*kockaszm+kockaszm/2+k,y+j*kockaszm+kockaszm/2+l)<<dot;
+                            }
+                            else if(k*k+l*l<=r*r){
+                                gout<<color(255,0,0)<<move_to(x+i*kockaszm+kockaszm/2+k,y+j*kockaszm+kockaszm/2+l)<<dot;
+                            }
                         }
                     }
                 }
-
+                else{
+                    for(int k=-r;k<r;k++){
+                        for(int l=-r;l<r;l++){
+                            if(k*k+l*l<=(r-1)*(r-1)){
+                                gout<<color(220,220,220)<<move_to(x+i*kockaszm+kockaszm/2+k,y+j*kockaszm+kockaszm/2+l)<<dot;
+                            }
+                            else if(k*k+l*l<=r*r){
+                                gout<<color(255,0,0)<<move_to(x+i*kockaszm+kockaszm/2+k,y+j*kockaszm+kockaszm/2+l)<<dot;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

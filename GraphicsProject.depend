@@ -3040,7 +3040,7 @@
 	<../widgets.hpp>
 	<vector>
 
-1779041118 source:c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\main.cpp
+1779055384 source:c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\main.cpp
 	"widgets.hpp"
 	"examplecheckbox.hpp"
 	"StaticText.hpp"
@@ -3051,7 +3051,7 @@
 	"szambeallito.hpp"
 	"Jatekter.hpp"
 
-1778963228 c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\include\gomb.hpp
+1779048935 c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\include\gomb.hpp
 	<../widgets.hpp>
 	<functional>
 
@@ -3060,7 +3060,7 @@
 	"../widgets.hpp"
 	<vector>
 
-1778963201 source:c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\src\gomb.cpp
+1779049374 source:c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\src\gomb.cpp
 	"Gomb.hpp"
 
 1778948857 source:c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\widgets.cpp
@@ -3068,7 +3068,7 @@
 	"graphics.hpp"
 	"Application.hpp"
 
-1778683335 c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\statictext.hpp
+1779054955 c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\statictext.hpp
 	<../widgets.hpp>
 
 1778739596 c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\textedit.hpp
@@ -3079,20 +3079,20 @@
 	"TextEdit.hpp"
 	<fstream>
 
-1778683364 source:c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\statictext.cpp
+1779054955 source:c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\statictext.cpp
 	"StaticText.hpp"
 	<iostream>
 	<fstream>
 	<vector>
 	<sstream>
 
-1778947572 source:c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\szambeallito.cpp
+1779049183 source:c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\szambeallito.cpp
 	"szambeallito.hpp"
 
-1778947105 c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\szambeallito.hpp
+1779049033 c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\szambeallito.hpp
 	"widgets.hpp"
 
-1779040618 source:c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\src\jatekter.cpp
+1779051963 source:c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\src\jatekter.cpp
 	"Jatekter.hpp"
 
 1778964738 c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\include\jatekter.hpp
@@ -3106,9 +3106,9 @@
 1778942129 c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\include\alakzat.hpp
 	<../widgets.hpp>
 
-1778968403 source:c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\src\jatekmester.cpp
+1779053076 source:c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\src\jatekmester.cpp
 	"Jatekmester.hpp"
 
-1779045336 c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\include\jatekmester.hpp
+1779053090 c:\users\tanar\onedrive - pázmány péter katolikus egyetem\asztal\nusi\ppke\2. félév\bevprog 2\beadandók\3\graph64_2024\include\jatekmester.hpp
 	<vector>
 

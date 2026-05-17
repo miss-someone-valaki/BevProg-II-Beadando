@@ -10,7 +10,7 @@ using namespace genv;
 class Gomb : public Widget
 {
 public:
-    Gomb(Application*,int,int,int,int,string,function<void()>);
+    Gomb(Application*,int,int,int,int,string,function<void()>,int);
     virtual ~Gomb();
     void rajzol()const override;
     void handle(event ev)override;
@@ -19,6 +19,7 @@ private:
     string szoveg;
     bool rakattintottam=false;
     function<void()>f;
+    int betumeret=12;
 };
 
 #endif // GOMB_HPP

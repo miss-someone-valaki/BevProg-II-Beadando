@@ -8,9 +8,10 @@ class szambeallito : public Widget{
 protected:
     int maxi,mini;
     //int szam=0;
+    int betumeret=12;
 public:
     //szambeallito(int, int);
-    szambeallito(Application *,int,int,int ,int,int,int);
+    szambeallito(Application *,int,int,int ,int,int,int,int);
     bool folotte_fel(int,int);
     bool folotte_le(int ,int);
     void rajzol()const override;
