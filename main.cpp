@@ -42,8 +42,8 @@ public:
         if(jm->urese(x,y)){
             jm->odarak(x,y);
             ki_jon=jm->melyik_jatekos_van();
-            if(ki_jon==1)jatekos="Blue";
-            else if(ki_jon==2)jatekos="Red";
+            if(ki_jon==1)jatekos="Next player: Blue";
+            else if(ki_jon==2)jatekos="Next player: Red";
             kijon_szoveg->set_text(jatekos);
         }
         if(jm->ellenorzes(x,y)){
@@ -67,10 +67,11 @@ public:
         n=sz1->get_szam();
         ki_jon=1;
         if(kijon_szoveg){
-            if(ki_jon==1)jatekos="Blue";
-            else if(ki_jon==2)jatekos="Red";
+            if(ki_jon==1)jatekos="Next player: Blue";
+            else if(ki_jon==2)jatekos="Next player: Red";
             kijon_szoveg->set_text(jatekos);
         }
+        if (jm) delete jm;
         jm=new Jatekmester(n,n);
         jt=new Jatekter(this,30,40,530,530,n,[=](int x,int y){update(x,y);},jm);
         all=GAME;

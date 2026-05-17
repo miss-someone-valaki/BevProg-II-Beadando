@@ -22,5 +22,5 @@ void StaticText::handle(event ev)
 
 void StaticText::set_text(string uj)
 {
-    _text="Next player: "+uj;
+    _text=uj;
 }
