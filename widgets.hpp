@@ -7,11 +7,8 @@
 using namespace std;
 using namespace genv;
 
-//class Application;
-
 class Widget {
 protected:
-    //int _x, _y, _size_x, _size_y;
     Application * parent;
     int x=10, y=10, sz=70, m=20;
     int szam=0;
@@ -20,13 +17,9 @@ protected:
     int gombsz=16;
     string s="";
     bool rajtavan=false;
-    //bool szamb=false;
-    //bool kiv=false;
     bool lathato=false;
 public:
     Widget(Application *,int, int, int, int);
-    //Widget(int,int,int,int);
-    virtual ~Widget();
     virtual bool is_selected(int, int);
     virtual void rajzol()const =0;
     virtual void handle(genv::event)=0;

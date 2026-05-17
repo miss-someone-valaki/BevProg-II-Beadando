@@ -31,14 +31,6 @@ void Application::event_loop()
                 }
             }
         }
-        /*if(ev.type==ev_key){
-            if(ev.keycode==key_enter){
-                action("enter");
-            }
-            else if(ev.keycode==key_space){
-                action("space");
-            }
-        }*/
         if(focus!=-1 && !widget[focus]->get_lathato())focus=-1;
         if (focus!=-1) {
             widget[focus]->handle(ev);
@@ -56,7 +48,3 @@ void Application::register_widget(Widget *w)
     widget.push_back(w);
 }
 
-/*void Application::torles_listabol(string kiirni)
-{
-    _widget.erase(kiirni);
-}*/

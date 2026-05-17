@@ -8,32 +8,20 @@ Jatekter::Jatekter(Application *parent_,int x_,int y_,int sz_,int m_,int n_,func
     kockaszm=sz/szdb;
 }
 
-Jatekter::~Jatekter()
-{
-}
-
 void Jatekter::rajzol()const
 {
     gout<<move_to(x,y)<<color(150,150,150)<<box(szdb*kockaszm,mdb*kockaszm);
     for(int i=0;i<szdb;i++){
         for(int j=0;j<mdb;j++){
             gout<<move_to(x+i*kockaszm+1,y+j*kockaszm+1)<<color(220,220,220)<<box(kockaszm-2,kockaszm-2);
-            /*if(jm->get_table(i,j)==0){
-
-            }*/
             if(jm->get_table(i,j)==1){
                 if(jm->gyoztese(i,j))
                     gout<<move_to(x+i*kockaszm+1,y+j*kockaszm+1)<<color(180, 180, 255)<<box(kockaszm-2,kockaszm-2);
-                //gout<<move_to(x+i*kockaszm+1,y+j*kockaszm+1)<<color(220,220,220)<<box(kockaszm-2,kockaszm-2);
-                //else{
                     gout<<move_to(x+i*kockaszm+3,y+j*kockaszm+3)<<color(0,0,255)<<line(kockaszm-6,kockaszm-6);
                     gout<<move_to(x+i*kockaszm+kockaszm-3,y+j*kockaszm+3)<<color(0,0,255)<<line(-kockaszm+6,kockaszm-6);
-                //}
             }
             else if(jm->get_table(i,j)==2){
-                //gout<<move_to(x+i*kockaszm+1,y+j*kockaszm+1)<<color(220,220,220)<<box(kockaszm-2,kockaszm-2);
                 int r=(kockaszm-6)/2;
-                //r=kockaszm;
                 if(jm->gyoztese(i,j)){
                     gout<<move_to(x+i*kockaszm+1,y+j*kockaszm+1)<<color(255,180,180)<<box(kockaszm-2,kockaszm-2);
                     for(int k=-r;k<r;k++){
@@ -62,13 +50,6 @@ void Jatekter::rajzol()const
             }
         }
     }
-    /*for(int i=0;i<szdb;i++){
-        for(int j=0;j<mdb;j++){
-            //if(tabla[i][j]==0){
-                gout<<move_to(x+i*kockaszm+1,y+j*kockaszm+1)<<color(200,200,200)<<box(kockaszm-2,kockaszm-2);
-            //}
-        }
-    }*/
 }
 
 int Jatekter::melyik_negyzet_folott_x(int mx)
@@ -88,6 +69,5 @@ void Jatekter::handle(event ev)
         int my=melyik_negyzet_folott_y(ev.pos_y);
         if(mx>=0 && my>=0 && mx<szdb && my<mdb)
             f(mx,my);
-        //Jatekmester::handle(ev.pos_x,ev.pos_y);
     }
 }

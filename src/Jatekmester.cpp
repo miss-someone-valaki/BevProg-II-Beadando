@@ -2,23 +2,11 @@
 
 Jatekmester::Jatekmester(int sz,int m):
     table(sz,vector<int>(m,0)),tabla_tele(0)
-{
-    /*for(int i=0;i<tabla.size();i++){
-        for(int j=0;j<tabla[i].size();j++){
-            tabla[i][j]=0;
-        }
-    }*/
-    //tabla[0][5]=2;
-}
-
-Jatekmester::~Jatekmester()
-{
-}
+{}
 
 bool Jatekmester::urese(int mx,int my)
 {
-    //if(mx>=0 && mx<=sz && my>=0 && my<=m)
-        return table[mx][my]==0;
+    return table[mx][my]==0;
 }
 
 void Jatekmester::odarak(int mx,int my)
@@ -35,13 +23,7 @@ void Jatekmester::odarak(int mx,int my)
         ellenorzes(mx,my);
         melyik_jatekos=1;
     }
-    //ellenorzes(mx,my);
 }
-
-/*void Jatekmester::ellenorzes(int akt_alak_x,int akt_alak_y)
-{
-
-}*/
 
 bool Jatekmester::ellenorzes(int x,int y){
     if(tabla_tele==table.size()*table[0].size()){megtelt=true;return true;}
@@ -50,7 +32,7 @@ bool Jatekmester::ellenorzes(int x,int y){
     int dy[]={0,1,1,-1};
 
     for(int i=0;i<4;i++){
-        gyoztes.clear(); // Minden iránynál tiszta lappal indulunk
+        gyoztes.clear();
         gyoztes.push_back({x,y});
         int db=1;
         int nx=x+dx[i];
