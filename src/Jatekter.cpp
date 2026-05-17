@@ -14,6 +14,7 @@ Jatekter::~Jatekter()
 
 void Jatekter::rajzol()const
 {
+    gout<<move_to(x,y)<<color(150,150,150)<<box(szdb*kockaszm,mdb*kockaszm);
     for(int i=0;i<szdb;i++){
         for(int j=0;j<mdb;j++){
             if(jm->get_table(i,j)==0){

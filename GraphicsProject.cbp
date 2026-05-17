@@ -63,6 +63,8 @@
 		</Unit>
 		<Unit filename="include/Application.hpp" />
 		<Unit filename="include/Gomb.hpp" />
+		<Unit filename="include/Jatekmester.hpp" />
+		<Unit filename="include/Jatekter.hpp" />
 		<Unit filename="kivalaszto.cpp" />
 		<Unit filename="kivalaszto.hpp" />
 		<Unit filename="main.cpp">
@@ -71,6 +73,10 @@
 		</Unit>
 		<Unit filename="src/Application.cpp" />
 		<Unit filename="src/Gomb.cpp" />
+		<Unit filename="src/Jatekmester.cpp" />
+		<Unit filename="src/Jatekter.cpp" />
+		<Unit filename="szambeallito.cpp" />
+		<Unit filename="szambeallito.hpp" />
 		<Unit filename="widgets.cpp" />
 		<Unit filename="widgets.hpp" />
 		<Extensions />

@@ -45,7 +45,7 @@ public:
         //te1=new StaticText(this,10,200,200,50,"valamit, k rlek");
         te2=new TextEdit(this,10,200,200,50,"valamit, k rlek");
         cb=new ExampleCheckBox(this,200,100,40,40);*/
-        sz1=new szambeallito(this,10,10,70,20,30,15);
+        sz1=new szambeallito(this,10,10,70,20,30,5);
         start=new Gomb(this,10,100,70,20,"START",[=](){elindul();});
         uj_jatek=new Gomb(this,10,200,70,20,"RESTART",[=](){elindul();});
 
@@ -98,7 +98,7 @@ public:
         n=sz1->get_szam();
         //lathatosag();
         jm=new Jatekmester(n,n);
-        jt=new Jatekter(this,40,40,400,400,n,[=](int x,int y){update(x,y);},jm);
+        jt=new Jatekter(this,40,40,500,500,n,[=](int x,int y){update(x,y);},jm);
         all=GAME;
         lathatosag();
     }
@@ -107,7 +107,7 @@ public:
 int main()
 {
     //gout.open(400,400);
-    MyApp a(500,500);
+    MyApp a(600,600);
     a.event_loop();
     return 0;
 }

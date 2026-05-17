@@ -21,6 +21,8 @@ public:
 protected:
     vector<vector<int>>table;
     int melyik_jatekos=1;
+    int tabla_tele;
+    bool megtelt=false;
 };
 
 #endif // JATEKMESTER_HPP
